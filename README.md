@@ -1,3 +1,30 @@
+# Request (Lite Fork) -- Simplified HTTP client
+
+[![NPM](https://nodei.co/npm/request-lite.png)](https://nodei.co/npm/request-lite/)
+
+## What is this?
+
+This is a [`request`](https://github.com/mikeal/request) fork with all optional dependencies removed. So less get's installed when you install it in a project via `package.json`. I will do my best to keep it up to date with the core request module. (No guarantees).
+
+Pick and choose your optional dependencies:
+
+* `tough-cookie`
+* `form-data`
+* `tunnel-agent`
+* `http-signature`
+* `oauth-sign`
+* `hawk`
+* `aws-sign2`
+
+```
+npm install --save request-lite <optional modules>
+```
+
+> Note: This will only exists until `npm` supports a way to install a package without optional dependencies via `package.json`.
+
+
+----
+
 # Request — Simplified HTTP client
 
 [![NPM](https://nodei.co/npm/request.png)](https://nodei.co/npm/request/)
@@ -7,7 +34,7 @@
 Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.
 
 ```javascript
-var request = require('request');
+var request = require('request-lite');
 request('http://www.google.com', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Print the google web page.
@@ -223,7 +250,7 @@ of stars and forks for the request repository. This requires a
 custom `User-Agent` header as well as https.
 
 ```javascript
-var request = require('request');
+var request = require('request-lite');
 
 var options = {
 	url: 'https://api.github.com/repos/mikeal/request',
@@ -354,7 +381,7 @@ request.jar()
 ## Examples:
 
 ```javascript
-  var request = require('request')
+  var request = require('request-lite')
     , rand = Math.floor(Math.random()*100000000).toString()
     ;
   request(
